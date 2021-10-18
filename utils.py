@@ -125,21 +125,6 @@ def calculateprocessingres(img, basesize, confidence=0.1, scale_threshold=3, who
     return int(outputsize_scale*speed_scale), patch_scale
 
 
-def applyGridpatch(blsize, stride, img, box):
-    # Extract a simple grid patch.
-    counter1 = 0
-    patch_bound_list = {}
-    for k in range(blsize, img.shape[1] - blsize, stride):
-        for j in range(blsize, img.shape[0] - blsize, stride):
-            patch_bound_list[str(counter1)] = {}
-            patchbounds = [j - blsize, k - blsize, j - blsize + 2 * blsize, k - blsize + 2 * blsize]
-            patch_bound = [box[0] + patchbounds[1], box[1] + patchbounds[0], patchbounds[3] - patchbounds[1],
-                           patchbounds[2] - patchbounds[0]]
-            patch_bound_list[str(counter1)]['rect'] = patch_bound
-            patch_bound_list[str(counter1)]['size'] = patch_bound[2]
-            counter1 = counter1 + 1
-    return patch_bound_list
-
 
 def write_depth(path, depth, bits=1 , colored=False):
     """Write depth map to png file.
@@ -182,65 +167,28 @@ class Images:
         name = name.replace(".jpeg", "")
         self.name = name
 
-
-class ImageandPatchs:
-    def __init__(self, root_dir, name, patchsinfo, rgb_image, scale=1):
-        self.root_dir = root_dir
-        self.patchsinfo = patchsinfo
+class Depths:
+    def __init__(self, lr_dir, hr_dir, files, index):
+        #self.root_dir = root_dir
+        name = files[index]
+        self.low_res = read_image(os.path.join(lr_dir, name))
+        self.high_res = read_image(os.path.join(hr_dir, name))
+        name = name.replace(".jpg", "")
+        name = name.replace(".png", "")
+        name = name.replace(".jpeg", "")
         self.name = name
-        self.patchs = patchsinfo
-        self.scale = scale
-
-        self.rgb_image = cv2.resize(rgb_image, (round(rgb_image.shape[1]*scale), round(rgb_image.shape[0]*scale)),
-                                    interpolation=cv2.INTER_CUBIC)
-
-        self.do_have_estimate = False
-        self.estimation_updated_image = None
-        self.estimation_base_image = None
-
-    def __len__(self):
-        return len(self.patchs)
-
-    def set_base_estimate(self, est):
-        self.estimation_base_image = est
-        if self.estimation_updated_image is not None:
-            self.do_have_estimate = True
-
-    def set_updated_estimate(self, est):
-        self.estimation_updated_image = est
-        if self.estimation_base_image is not None:
-            self.do_have_estimate = True
-
-    def __getitem__(self, index):
-        patch_id = int(self.patchs[index][0])
-        rect = np.array(self.patchs[index][1]['rect'])
-        msize = self.patchs[index][1]['size']
-
-        ## applying scale to rect:
-        rect = np.round(rect * self.scale)
-        rect = rect.astype('int')
-        msize = round(msize * self.scale)
-
-        patch_rgb = impatch(self.rgb_image, rect)
-        if self.do_have_estimate:
-            patch_whole_estimate_base = impatch(self.estimation_base_image, rect)
-            patch_whole_estimate_updated = impatch(self.estimation_updated_image, rect)
-            return {'patch_rgb': patch_rgb, 'patch_whole_estimate_base': patch_whole_estimate_base,
-                    'patch_whole_estimate_updated': patch_whole_estimate_updated, 'rect': rect,
-                    'size': msize, 'id': patch_id}
-        else:
-            return {'patch_rgb': patch_rgb, 'rect': rect, 'size': msize, 'id': patch_id}
 
 
-class ImageDataset:
+class BoostDataset:
     def __init__(self, root_dir, subsetname):
         self.dataset_dir = root_dir
         self.subsetname = subsetname
-        self.rgb_image_dir = root_dir
-        self.files = sorted(os.listdir(self.rgb_image_dir))
+        self.lr_depth_dir = os.path.join(root_dir,'low-res')
+        self.hr_depth_dir = os.path.join(root_dir,'high-res')
+        self.files = sorted(os.listdir(self.lr_depth_dir))
 
     def __len__(self):
         return len(self.files)
 
     def __getitem__(self, index):
-        return Images(self.rgb_image_dir, self.files, index)
+        return Depths(self.lr_depth_dir,self.hr_depth_dir, self.files, index)

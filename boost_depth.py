@@ -7,7 +7,6 @@ from torchvision.transforms import transforms
 from utils import BoostDataset,write_depth
     
 
-
 # PIX2PIX : MERGE NET
 from pix2pix.options.test_options import TestOptions
 from pix2pix.models.pix2pix4depth_model import Pix2Pix4DepthModel
@@ -27,9 +26,9 @@ print("device: %s" % device)
 
 # Global variables
 pix2pixmodel = None
-factor = None
-whole_size_threshold = 3000  # R_max from the paper
-GPU_threshold = 1600 - 32 # Limit for the GPU (NVIDIA RTX 2080), can be adjusted 
+#factor = None
+#whole_size_threshold = 3000  # R_max from the paper
+#GPU_threshold = 1600 - 32 # Limit for the GPU (NVIDIA RTX 2080), can be adjusted 
 
 
 
