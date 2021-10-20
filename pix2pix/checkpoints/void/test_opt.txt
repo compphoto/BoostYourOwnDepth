@@ -1,0 +1,52 @@
+----------------- Options ---------------
+                    Final: False                         
+                       R0: False                         
+                      R20: False                         
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: ./pix2pix/checkpoints         
+         colorize_results: True                          	[default: False]
+                crop_size: 672                           
+                 data_dir: input/                        	[default: None]
+                 dataroot: None                          
+             dataset_mode: depthmerge                    
+                 depthNet: None                          
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+            generatevideo: None                          
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 2                             
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 672                           
+         max_dataset_size: 10000                         
+                  max_res: inf                           
+                    model: pix2pix4depth                 
+               n_layers_D: 3                             
+                     name: void                          
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: unet_1024                     
+ net_receptive_field_size: None                          
+                      ngf: 64                            
+               no_dropout: False                         
+                  no_flip: False                         
+                     norm: none                          
+                 num_test: 50                            
+              num_threads: 4                             
+               output_dir: output                        	[default: None]
+                output_nc: 1                             
+        output_resolution: None                          
+                    phase: test                          
+              pix2pixsize: None                          
+               preprocess: resize_and_crop               
+                savecrops: None                          
+             savewholeest: None                          
+           serial_batches: False                         
+                   suffix:                               
+                  verbose: False                         
+----------------- End -------------------

@@ -53,16 +53,18 @@ def run(dataset, option):
     print("start processing")
     for image_ind, images in enumerate(dataset):
         print('processing image', image_ind, ':', images.name)
+        print()
 
         # Load image from dataset
         low_res = images.low_res
         high_res = images.high_res
         input_resolution = low_res.shape
+        print(input_resolution)
 
         
 
         # Generate the base estimate using the double estimation.
-        whole_estimate = global_merge(low_res, high_res, option.pix2pixsize, option.depthNet)
+        whole_estimate = global_merge(low_res, high_res, option.pix2pixsize)
         
         path = os.path.join(result_dir, images.name)
         if option.output_resolution == 1:
@@ -81,11 +83,29 @@ def global_merge(low_res, high_res, pix2pixsize):
     estimate1 = low_res
     # Resize to the inference size of merge network.
     estimate1 = cv2.resize(estimate1, (pix2pixsize, pix2pixsize), interpolation=cv2.INTER_CUBIC)
+    depth_min = estimate1.min()
+    depth_max = estimate1.max()
+    
+
+    if depth_max - depth_min > np.finfo("float").eps:
+        estimate1 = (estimate1 - depth_min) / (depth_max - depth_min)
+    else:
+        estimate1 = 0
+
 
     # Generate the high resolution estimation
     estimate2 = high_res
     # Resize to the inference size of merge network.
     estimate2 = cv2.resize(estimate2, (pix2pixsize, pix2pixsize), interpolation=cv2.INTER_CUBIC)
+    depth_min = estimate2.min()
+    depth_max = estimate2.max()
+
+    print(depth_min,depth_max)
+
+    if depth_max - depth_min > np.finfo("float").eps:
+        estimate2 = (estimate2 - depth_min) / (depth_max - depth_min)
+    else:
+        estimate2 = 0
 
     # Inference on the merge model
     pix2pixmodel.set_input(estimate1, estimate2)
