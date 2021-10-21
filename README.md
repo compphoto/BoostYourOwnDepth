@@ -1,10 +1,21 @@
-# BoostYourOwnDepth
+# Boost Your Own Depth
 
 ## Apply our monocular depth boosting to your own network!
 
-Our [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [October 2021]   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/compphoto/BoostYourOwnDepth/blob/main/colab/byod.ipynb)
+Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [October 2021]   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/compphoto/BoostYourOwnDepth/blob/main/colab/byod.ipynb)
 
-Follow the steps to easily boost your own depth.
+You can mix'n'match depths from different networks...:
+|RGB | Base and details from [MiDaS][1] | Base from [MiDaS][1] and details from [LeRes][2]|
+|----|------------|-----------|
+|![patchselection](./figures/dts_rgb.jpg)|![Patchexpand](./figures/dts_midas.png)|![Patchexpand](./figures/dts_mix.png)|
+
+
+...or use edited depths for improvements:
+|RGB | Base and details from [MiDaS][1] | With edited base from [MiDaS][1]|
+|----|------------|-----------|
+|![patchselection](./figures/lunch_rgb.jpg)|![Patchexpand](./figures/lunch_orig.png)|![Patchexpand](./figures/lunch_edited.png)|
+
+
 
 For more information on this project:
 ### Boosting Monocular Depth Estimation Models to High-Resolution via Content-Adaptive Multi-Resolution Merging 
@@ -31,5 +42,7 @@ year={2021},
 
 ## Credits
 
-The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][1] repository. 
-[1]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][3] repository. 
+[1]: https://github.com/intel-isl/MiDaS/tree/v2
+[2]: https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS
+[3]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix

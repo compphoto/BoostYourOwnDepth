@@ -95,12 +95,13 @@ def global_merge(low_res, high_res, pix2pixsize):
 
     # Generate the high resolution estimation
     estimate2 = high_res
+    
     # Resize to the inference size of merge network.
     estimate2 = cv2.resize(estimate2, (pix2pixsize, pix2pixsize), interpolation=cv2.INTER_CUBIC)
     depth_min = estimate2.min()
     depth_max = estimate2.max()
 
-    print(depth_min,depth_max)
+    #print(depth_min,depth_max)
 
     if depth_max - depth_min > np.finfo("float").eps:
         estimate2 = (estimate2 - depth_min) / (depth_max - depth_min)
