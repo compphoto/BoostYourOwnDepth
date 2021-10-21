@@ -7,13 +7,13 @@ Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [O
 You can mix'n'match depths from different networks...:
 |RGB | Base and details from [MiDaS][1] | Base from [MiDaS][1] and details from [LeRes][2]|
 |----|------------|------------|
-|![patchselection](./figures/dts_rgb.jpg)|![patchselection](./figures/dts_midas.png)|![patchselection](./figures/dts_mix.png)|
+|![patchselection](./figures/dts_rgb.jpg | width=100)|![patchselection](./figures/dts_midas.png | width=100)|![patchselection](./figures/dts_mix.png | width=100)|
 
 
 ...or use edited depths for improvements:
 |RGB | Base and details from [MiDaS][1] | With edited base from [MiDaS][1]|
 |----|------------|------------|
-|![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/lunch_edited.png)|
+|![patchselection](./figures/lunch_rgb.jpg | width=100)|![patchselection](./figures/lunch_orig.png | width=100)|![patchselection](./figures/lunch_edited.png | width=100)|
 
 
 
