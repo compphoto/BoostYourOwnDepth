@@ -42,7 +42,7 @@ year={2021},
 
 ## Credits
 
-The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][3] repository. 
-[1]: https://github.com/intel-isl/MiDaS/tree/v2
-[2]: https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS
+The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][3] repository.\
+[1]: https://github.com/intel-isl/MiDaS/tree/v2\
+[2]: https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS\
 [3]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
