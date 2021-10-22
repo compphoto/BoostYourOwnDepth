@@ -8,7 +8,7 @@ Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [O
 In the image below, choosing a different base estimate can improve the depth difference between the city and the workers:
 | Input | Base and details from [MiDaS][1] | Base from [LeRes][2] and details from [MiDaS][1]|
 |----|------------|------------|
-|![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/lunch_mix.png)|
+|![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/Lunch_mix.png)|
 
 
 Not enough ? You can also edit the base before merging:
