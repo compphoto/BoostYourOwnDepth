@@ -4,17 +4,19 @@
 
 Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [October 2021]   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/compphoto/BoostYourOwnDepth/blob/main/colab/byod.ipynb)
 
-You can mix'n'match depths from different networks...:
-|RGB | Base and details from [MiDaS][1] | Base from [MiDaS][1] and details from [LeRes][2]|
+Mix'n'match depths from different networks. In the image below, choosing a different base estimate can improve the depth difference between the city and the workers:
+| Input | Base and details from [MiDaS][1] | Base from [LeRes][2] and details from [MiDaS][1]|
 |----|------------|------------|
-|![patchselection](./figures/dts_rgb.jpg)|![patchselection](./figures/dts_midas.png)|![patchselection](./figures/dts_mix.png)|
+|![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/lunch_mix.png)|
 
 
-...or use edited depths for improvements:
-|RGB | Base and details from [MiDaS][1] | With edited base from [MiDaS][1]|
+Not enough ? You can also edit the base before merging:
+| Input | Base and details from [MiDaS][1] | With edited base from [MiDaS][1]|
 |----|------------|------------|
 |![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/lunch_edited.png)|
 
+
+### Feel free to experiment ! Have your own network ? Better editing skills? Give it a go!
 
 
 For more information on this project:
@@ -45,4 +47,4 @@ year={2021},
 The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][3] repository.\
 [1]: https://github.com/intel-isl/MiDaS/tree/v2 \
 [2]: https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS \
-[3]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
+[3]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix \
