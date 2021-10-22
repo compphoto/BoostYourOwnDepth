@@ -19,8 +19,8 @@ Not enough ? You can also edit the base before merging:
 
 ### Feel free to experiment ! Have your own network ? Better editing skills? Give it a go!
 
-
-
+&nbsp;
+&nbsp;
 
 For more information on this project:
 ### Boosting Monocular Depth Estimation Models to High-Resolution via Content-Adaptive Multi-Resolution Merging 
