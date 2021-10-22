@@ -5,7 +5,7 @@
 Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [October 2021]   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/compphoto/BoostYourOwnDepth/blob/main/colab/byod.ipynb)
 
 ### Mix'n'match depths from different networks. 
-In the image below, choosing a different base estimate can improve the depth difference between the city and the workers:
+In the image below, choosing a different base estimate can improve the depth for the city:
 | Input | Base and details from [MiDaS][1] | Base from [LeRes][2] and details from [MiDaS][1]|
 |----|------------|------------|
 |![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/Lunch_mix.png)|
