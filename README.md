@@ -4,6 +4,13 @@
 
 Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [October 2021]   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/compphoto/BoostYourOwnDepth/blob/main/colab/byod.ipynb)
 
+### How does it work?
+The code let's you generate a **double estimation** from your own inputs.
+It executes a single run through our merging network, an image-to-image translation model that merges the depth range of the low-resolution base with the details of the high-resolution input.
+We also provide code to calculate the R20 resolution based on your image.
+
+![merge](./figures/merge.png)
+
 ### Mix'n'match depths from different networks. 
 In the image below, choosing a different base estimate can improve the depth for the city:
 | Input | Base and details from [MiDaS][1] | Base from [LeRes][2] and details from [MiDaS][1]|
