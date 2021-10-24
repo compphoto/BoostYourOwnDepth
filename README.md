@@ -44,6 +44,9 @@ In the image below, we show that choosing a different base estimate can improve 
 |![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/Lunch_mix.png)|
 
 To get the optimal result for a given scene, you may want to try multiple methods in both low- and high-resolutions and pick your favourite for each case.
+| Input | Base from [MiDaS v3 / DPT][3] | Base from [MiDaS v3 / DPT][3] and details from [MiDaS v2][1]|
+|----|------------|------------|
+|![patchselection](./figures/Motorcycle-perfect_rgb.jpg)|![patchselection](./figures/motorcycle_dpt_base.png)|![patchselection](./figures/motorcycle_v2_hr.png)|
 
 Moreover, you can simply edit the base image before merging using any image editing tool for more creative control:
 | Input | Base and details from [MiDaS][1] | With edited base from [MiDaS][1]|
@@ -102,10 +105,11 @@ year={2021},
 
 ## Credits
 
-The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][3] repository.\
+The "Merge model" code skeleton (./pix2pix folder) was adapted from the [pytorch-CycleGAN-and-pix2pix][4] repository.\
 [1]: https://github.com/intel-isl/MiDaS/tree/v2 \
 [2]: https://github.com/aim-uofa/AdelaiDepth/tree/main/LeReS \
-[3]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix \
+[3]: https://github.com/isl-org/DPT \
+[4]: https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix \
 
 
 
