@@ -128,6 +128,7 @@ if __name__ == "__main__":
                                                                     'Images can be .png .jpg .tiff')
     parser.add_argument('--output_dir', type=str, required=True, help='result dir. result depth will be png.'
                                                                       ' vides are JMPG as avi')
+    parser.add_argument('--checkpoints_dir', type=str, required=True, help='weights file directory')                                                                  
     parser.add_argument('--output_resolution', type=int, default=1, required=False,
                         help='0 for results in maximum resolution 1 for resize to input size')
     parser.add_argument('--pix2pixsize', type=int, default=1024, required=False)  # Do not change it
