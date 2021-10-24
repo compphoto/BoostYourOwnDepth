@@ -6,8 +6,8 @@ Our new [Google Colaboratory notebook](./colab/byod.ipynb) is now available.  [O
 
 ### How does it work?
 The code let's you generate a **double estimation** from your own inputs.
-It executes a single run through our merging network, an image-to-image translation model that merges the depth range of the low-resolution base with the details of the high-resolution input.
-We also provide code to calculate the R20 resolution based on your image.
+It executes a single run through our merging network, an image-to-image translation model that merges the depth range of the low-resolution base with the details of the high-resolution input. \
+We also provide code to calculate the R20 resolution for your image. With this, you can create your high-resolution input exactly as in our paper.
 
 ![merge](./figures/merge.png)
 
