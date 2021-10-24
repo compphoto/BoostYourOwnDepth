@@ -38,7 +38,7 @@ Our [Github repo](https://github.com/compphoto/BoostingMonocularDepth) for the m
 
 
 ## Mix'n'match depths from different networks or use your own custom-edited ones. 
-In the image below, we show that choosing a different base estimate can improve the depth for the city in the image below:
+In the image below, we show that choosing a different base estimate can improve the depth for the city:
 | Input | Base and details from [MiDaS][1] | Base from [LeRes][2] and details from [MiDaS][1]|
 |----|------------|------------|
 |![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/Lunch_mix.png)|
