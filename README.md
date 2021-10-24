@@ -46,7 +46,7 @@ In the image below, we show that choosing a different base estimate can improve 
 To get the optimal result for a given scene, you may want to try multiple methods in both low- and high-resolutions and pick your favourite for each case.
 | Input | Base from [MiDaS v3 / DPT][3] | Base from [MiDaS v3 / DPT][3] and details from [MiDaS v2][1]|
 |----|------------|------------|
-|![patchselection](./figures/Motorcycle-perfect_rgb.jpg)|![patchselection](./figures/motorcycle_dpt_base.png)|![patchselection](./figures/motorcycle_v2_hr.png)|
+|![patchselection](./figures/Motorcycle-perfect_rgb.png)|![patchselection](./figures/motorcycle_dpt_base.png)|![patchselection](./figures/motorcycle_double.png)|
 
 Moreover, you can simply edit the base image before merging using any image editing tool for more creative control:
 | Input | Base and details from [MiDaS][1] | With edited base from [MiDaS][1]|
