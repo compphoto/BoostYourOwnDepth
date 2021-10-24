@@ -2,6 +2,11 @@
 
 ## Boost custom or edited monocular depth maps using MergeNet
 
+
+| Input | Original result | After manual editing of base|
+|----|------------|------------|
+|![patchselection](./figures/lunch_rgb.jpg)|![patchselection](./figures/lunch_orig.png)|![patchselection](./figures/lunch_edited.png)|
+
 You can find our [Google Colaboratory notebook here](./colab/byod.ipynb).   [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/compphoto/BoostYourOwnDepth/blob/main/colab/byod.ipynb)
 
 In this repository, we present a stand-alone implementation of our merging operator we use in our recent work:
