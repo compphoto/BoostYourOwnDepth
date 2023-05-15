@@ -4,6 +4,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import skimage.measure
+import glob
 
 # miscellaneous function for reading, writing and processing rgb and depth images.
 
@@ -185,7 +186,7 @@ class BoostDataset:
         self.subsetname = subsetname
         self.lr_depth_dir = os.path.join(root_dir,'low-res')
         self.hr_depth_dir = os.path.join(root_dir,'high-res')
-        self.files = sorted(os.listdir(self.lr_depth_dir))
+        self.files = sorted(glob.glob(os.path.join(self.lr_depth_dir, '*')))
 
     def __len__(self):
         return len(self.files)
