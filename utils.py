@@ -24,6 +24,7 @@ def showimage(img):
 
 
 def read_image(path):
+    print('read_image', path)
     img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)/255.0
     #if img.ndim == 2:
     #    img = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR)
